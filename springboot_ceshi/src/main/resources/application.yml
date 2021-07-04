@@ -1,0 +1,21 @@
+server:
+  port: 8085
+spring:
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    url: jdbc:mysql://127.0.0.1:3306/lianxi?serverTimezone=Asia/Shanghai&useUnicode=true&characterEncoding=UTF-8&allowMultiQueries=true&useSSL=false&allowPublicKeyRetrieval=true
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    hikari:
+      minimum-idle: 5
+      idle-timeout: 180000
+      maximum-pool-size: 10
+      connection-timeout: 30000
+      connection-test-query: SELECT 1
+  profiles:
+    active: dev
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.wu.entity
+name: this is default
